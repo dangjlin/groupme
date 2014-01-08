@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   has_many :groups
+  has_many :posts
+  
   extend OmniauthCallbacks
 
   devise :database_authenticatable, :registerable,

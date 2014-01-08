@@ -11,22 +11,24 @@ before_action :login_required, :only => [:new, :create, :edit,:update,:destroy]
 	def create
 	
 	    @post = @group.posts.new(post_params)
-	if @post.save
-	redirect_to group_path(@group)
-	else
-	      render :new
-	    end
+	    @post.author = current_user
+
+			if @post.save
+			redirect_to group_path(@group)
+			else
+			      render :new
+			end
 	end
 
   	def edit
     
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
 	end
 
 
 	def update
     
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
 		if @post.update(post_params) 
 		redirect_to group_path(@group)
 		else
@@ -37,7 +39,7 @@ before_action :login_required, :only => [:new, :create, :edit,:update,:destroy]
 
   def destroy
     
-    @post = @group.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to group_path(@group)
 end
