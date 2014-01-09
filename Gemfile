@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -57,6 +58,7 @@ gem "dalli"
 gem "compass-rails", "~> 1.1.2"
 
 group :development do
+  gem 'sqlite3'
   gem "capistrano"
   gem "capistrano-ext"
   gem "cape"
@@ -67,6 +69,10 @@ group :development do
   gem "powder"
   gem "pry-nav"
   gem "pry-remote"
+end
+
+group :production do
+  gem 'pg', '0.15.1'
 end
 
 
