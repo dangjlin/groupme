@@ -33,7 +33,11 @@ class ApplicationController < ActionController::Base
   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation) }
   end
 
-
+  # facebook login authentication check 
+  def authenticate_user!
+    session[:user_return_to] = env['PATH_INFO']
+    redirect_to user_omniauth_authorize_path(:facebook) unless user_signed_in?
+  end
 
 end
 

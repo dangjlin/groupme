@@ -1,8 +1,8 @@
 defaults: &defaults
   app_name: "groupme"
   domain: "http://groupme.dev"    
-  facebook_app_id: 
-  facebook_secret: 
+  facebook_app_id: 1441732272709306
+  facebook_secret: "841a6ffcf19353d630ddff2a5c190595"
   hipchat_token: 
   hipchat_room_name: 
   admin_emails: 
