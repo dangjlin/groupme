@@ -1,6 +1,6 @@
 defaults: &defaults
-  app_name: "groupme"
-  domain: "http://groupme.dev"    
+  #app_name: "groupme"
+  #domain: "http://groupme.dev"    
   facebook_app_id: 1441732272709306
   facebook_secret: "841a6ffcf19353d630ddff2a5c190595"
   hipchat_token: 
@@ -13,9 +13,14 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  app_name: "groupme"
+  domain: "http://groupme.dev"   
+
 
 test:
   <<: *defaults
 
 production:
   <<: *defaults
+  app_name: "asiafxchange"
+  domain: "http://dan-group-post.herokuapp.com/"  
