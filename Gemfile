@@ -73,6 +73,14 @@ end
 
 group :production do
   gem 'pg', '0.15.1'
+  gem "cape"
+  gem "binding_of_caller"
+  gem "better_errors", "~> 0.9.0"
+  gem "magic_encoding"
+  gem "annotate"
+  gem "powder"
+  gem "pry-nav"
+  gem "pry-remote"
 end
 
 
